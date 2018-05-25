@@ -1,0 +1,132 @@
+<ion-header   id="myhead" >
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+      <ion-icon  name="menu" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+      <div class="headeralign">
+      {{hospitalheader}}
+      </div>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)" >
+      <ion-icon name="more">
+      </ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- <ion-buttons  end > 
+    <button  (click)="openPage()"> 
+<ion-icon android="android-settings" md="md-settings" ></ion-icon>
+</button>
+</ion-buttons> --> 
+  </ion-toolbar>
+<!--  	<ion-navbar>
+ 	</ion-navbar>	 -->
+</ion-header>
+
+<ion-content>
+
+  <ion-list  *ngFor="let ab of a;let key=index ;">  
+    <ion-item text-wrap *ngIf="ab.sR == 'S' && !ab.image" class="message-left">{{ab.data}}</ion-item>
+    <ion-item text-wrap  *ngIf="ab.sR == 'R'" class="message-right">{{ab.data}}</ion-item>
+    <ion-item text-wrap *ngIf="ab.sR == 'S' && ab.data.image"  class="message-left" >
+    <img src="{{ab.data.image}}"  />
+    </ion-item>
+  </ion-list>
+
+  <ion-fab right bottom *ngIf="speechResponse"  >
+    <button ion-fab mini style="background: rgba(0,0,0,0);" (click)="speechResponse=false">
+    <ion-icon  style="color:#4F8EF7;" name="volume-up" ></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab right bottom *ngIf="!speechResponse" >
+    <button ion-fab mini style="background: rgba(0,0,0,0);" (click)="speechResponse=true">
+    <ion-icon  style="color: #4F8EF7;" name="volume-off" ></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-10 class="screenup">
+				    <ion-textarea #focus rows="1" id="messageInputBox" 
+				    placeholder="Send message" 
+            (input)="change()" [(ngModel)]="editorMsg" required>
+	         </ion-textarea>
+          </ion-col>
+
+          <ion-col col-2 *ngIf="editorMsg">
+            <button ion-button clear icon-only item-right class="larger" (click)="sendText(editorMsg)"  >
+               <ion-icon android="android-send" md="md-send"  ></ion-icon>
+ 				    </button>
+			    </ion-col>
+
+ 		      <ion-col  col-2 *ngIf="!editorMsg">
+ 	          <button ion-button clear icon-only item-right (click)="sendVoice()">
+              <ion-icon android="android-mic" md="md-mic"></ion-icon>
+			     	</button>
+				  </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>
+
+<ion-menu [content]="content">
+
+  <ion-header class="head"> 
+    <ion-item  style="background-color:#E3F2FD" no-lines>
+      <ion-avatar class="pic" >
+      <img  src="{{base64Image}}"   class="pic">
+
+<!-- <img src="{{base64Image}}" class="pic" >
+ -->
+      </ion-avatar>
+    </ion-item>
+  </ion-header>
+
+<ion-content>
+  <ion-item no-lines class="block">
+    <ion-label><B>Dr.</B>
+    <B>{{parameter1}}</B> 
+    </ion-label>
+  </ion-item>
+
+  <ion-item no-lines class="block"><B>{{Department}}</B>
+  </ion-item>
+
+  <ion-item no-lines class="block">
+  <B>{{ward}}</B>
+  </ion-item>
+
+  <ion-item no-lines class="block"><B>{{Number}}</B>
+  </ion-item>
+
+</ion-content>
+
+
+<ion-footer>
+  <button ion-button full clear outline (click)="logout()">Logout</button>
+</ion-footer>
+
+</ion-menu>
+
+  <!--  <ion-tit<button ion-button (click)="isspeechsupported()">isspeechsupported</button>
+<button ion-button (click)="getpermission()">getpermission</button>
+<button ion-button (click)="haspermission()">haspermission</button>
+<button ion-button (click)="getsupportedlang()">getsupportedlang</button>
+<button ion-button (click)="listenspeech()">listenspeech</button>
+<input ion-text type="text" [(ngModel)]="question">le>second</ion-title> -->
+<!--  -->
+
+<!--   <button ion-button (click)="sendVoice()">Mic </button> 
+ -->
+
+<!-- <ion-card>
+<ion-card-content *ngFor="let speech of speechlist">
+<p>{{speech}}</p>
+</ion-card-content>
+</ion-card> -->

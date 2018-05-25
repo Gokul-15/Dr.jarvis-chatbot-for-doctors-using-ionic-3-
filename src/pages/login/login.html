@@ -1,0 +1,45 @@
+<img src="assets/imgs/icon.png" class="img"> 
+ <form> 
+  <ion-list center> 
+	<ion-card>
+		<ion-card-content >
+			<ion-row>
+				<ion-item>
+  					<ion-label>
+    					Hospital
+  					</ion-label>
+ 					 <ion-select [(ngModel)]="hospital"  [ngModelOptions]="{standalone: true}">
+    							<ion-option>Kovai Medical Center Hospital</ion-option>
+								<ion-option>KG Hospital</ion-option>
+					</ion-select>
+				</ion-item>
+  				
+  				<ion-col col-4>
+ 				<ion-item>
+            		<ion-label floating>Code</ion-label>
+            		<ion-input type="tel" value="+91" readonly> </ion-input>
+          		</ion-item>
+          		</ion-col>
+
+				<ion-col col-8>
+   				<ion-item class="padding-left-2px">
+            		<ion-label floating>Enter Phone Number</ion-label>
+            		<ion-input type="tel" maxlength="10" name="phoneNumber"  [(ngModel)]="phonenum">  </ion-input>
+          		</ion-item>
+        		</ion-col>
+
+    			<ion-item>
+     				<ion-label floating>Pin</ion-label>
+    				<ion-input type="tel"  maxlength="4" name="pin"  maxlength="4" [(ngModel)]="pinnum"  ></ion-input>
+  				 </ion-item>
+
+			</ion-row>
+			<br>
+			<button ion-button round medium (click)="login1()">LOGIN</button> 
+ 			<br>
+		</ion-card-content>
+	</ion-card>
+	<p>New User ?? or To create new account</p><p>
+	<button ion-button clear outline small (click)="signup()">sign up</button></p>
+    </ion-list>
+ </form> 

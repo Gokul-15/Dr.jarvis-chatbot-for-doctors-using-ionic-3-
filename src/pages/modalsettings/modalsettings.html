@@ -1,0 +1,70 @@
+<!--
+  Generated template for the ModalsettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()"><ion-icon name="close"></ion-icon> </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-grid>
+	<ion-row>
+    <ion-col col-6>
+			<ion-item class="block" no-lines>
+
+<!-- <img class="pic" [src]="base64Image" *ngIf="base64Image"
+class="pic" /> -->
+        <img class="block" (click)="presentActionSheet()"  src="{{base64Image}}" *ngIf="base64Image" />
+<!-- <button ion-button (click)="takePicture()">
+	</button> -->
+
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!-- <button ion-button (click)="takePicture()">Take a Picture</button> -->
+
+<!-- <button ion-button (click)="uploadPicture()">upload a Picture</button> -->
+<ion-card>
+  <ion-item>
+    <ion-label >Dr.</ion-label>
+      <ion-input  [(ngModel)]="ne"   type="text" ></ion-input>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item>
+   <ion-label>
+      Department
+    </ion-label>
+    <ion-select [(ngModel)]="Department" >
+      <ion-option>Cardiology</ion-option>
+      <ion-option>ENT</ion-option>
+      <ion-option>Nuerology</ion-option>
+      <ion-option>Orthology</ion-option>
+      <ion-option>Microbiology</ion-option>
+      <ion-option>General MBBs</ion-option>
+      <ion-option>Surgent</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-card>
+
+<ion-card>
+  <ion-item>
+    <ion-input  type="text" [(ngModel)]="ward" ></ion-input>
+  </ion-item>
+ </ion-card>
+
+</ion-content>
+
+<ion-footer>
+   <button ion-button full clear outline (click)="savepage()">save </button>
+</ion-footer>
+

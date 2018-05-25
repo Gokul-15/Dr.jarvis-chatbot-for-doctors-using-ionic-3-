@@ -1,0 +1,64 @@
+page-chat {
+
+}
+.pic{
+	width:100px !important;  
+height : 100px !important;  
+
+  display: flex;
+  margin: auto;
+}
+.center{
+	text-align:center;
+}
+
+
+#messageInputBox{
+	font-size:20px;
+	bottom:10px;
+
+}
+.larger{
+	 position: fixed;
+    bottom: 10px;
+	}
+.message-left
+
+{
+margin-bottom:20px;
+bottom: -8.5px;
+max-width:80%;
+background-color:#B3E5FC;
+border-radius:10px;
+float: left;
+margin-left: 80px;
+
+.label{
+white-space:pre-line;
+    }
+}
+.message-right
+{
+
+
+.label{
+white-space:pre-line;
+    }
+
+margin-bottom:20px;
+bottom: -8.5px;
+max-width:80%;
+background-color:#DAF7A6  ;
+border-radius:10px;
+float: right;
+margin-right: 80px;
+
+}
+.screenup{
+ 
+position : initial !important;
+
+}
+.headeralign{
+	text-align:center;
+}
